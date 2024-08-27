@@ -13,7 +13,7 @@ function UpdateColor() {
   light = Math.abs(((100 + currentRotation / 3.6) % 100) * 2 - 100);
   box.style.backgroundColor = `hsl(0, 0%, ${light}%)`;
   content.style.backgroundColor = `hsl(0, 0%, ${light}%)`;
-  content.style.color = `hsl(0, 0%, ${100 - light}%)`;
+  content.style.color = `hsl(104, 50%, ${100 - light}%)`;
   // text-shadow: -15px 5px #c7c7c7, 15px -5px #5e5e5e;
   // -webkit-text-stroke: 2px#000000;
   TitleText.style.textShadow = `-15px 5px hsl(0, 0%, ${
