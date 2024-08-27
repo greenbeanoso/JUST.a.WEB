@@ -88,7 +88,7 @@
 #moon {
   left: -5vw;
 }
-/* 以下為了展開動畫 */
+/* 以 下 為了展開動畫 */
 details {
   overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
 }
