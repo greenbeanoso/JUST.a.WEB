@@ -1,153 +1,157 @@
-#titleBOX {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(0, 0%, 100%);
-  width: 100%;
-  height: 15vw;
-  right: 0%;
-  left: 0%;
-  overflow: hidden;
-}
 #TitleText {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  position: absolute;
-  top: 0%;
+  position: absolute; /* 絕對定位 */
+  top: 0%; /* 距離上方0% */
   background: linear-gradient(
     45deg,
     hsl(0, 0%, 100%),
     hsl(0, 0%, 0%)
   ); /* 設置45度的線性漸變背景 */
-  background-clip: text; /* 裁剪背景到文字 */
-  -webkit-background-clip: text; /* 兼容Webkit瀏覽器的背景裁剪 */
-  color: transparent; /* 將文字顏色設置為透明，顯示背景 */
-  padding: 0; /* 移除內邊距 */
-  margin: 0; /* 移除外邊距 */
-  font-size: 10vw; /* 設置字體大小 */
-  text-shadow: -15px 5px #c7c7c7, 15px -5px #5e5e5e;
-  -webkit-text-stroke: 2px#000000;
-}
-#slider {
-  top: -60%;
-  position: relative;
-  bottom: -40vw;
-  transform: rotate(0deg) translate(-50%, -80%);
-  width: 30vw;
-  height: 30vw;
-  max-width: 700px;
-  max-height: 700px;
-  border: 2px hsl(0, 0%, 50%) solid;
-  border-radius: 50% 50% 50% 50%; /* 圓角 */
-  cursor: grab;
-}
-
-#slider::before {
-  content: "";
-  position: absolute;
-  top: -2.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1em;
-  height: 1em;
-  background-color: #6c6c6c;
-  border-radius: 50%;
-}
-
-#slider::after {
-  content: "";
-  position: absolute;
-  top: 98%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1em;
-  height: 1em;
-  background-color: #ffb700;
-  border-radius: 50%;
-}
-#content {
-  position: absolute;
-  top: 20vw;
-  left: 10%;
-  right: 10%;
-  background-color: hsl(0, 0%, 100%);
-  color: #000000;
-  border-style: solid double;
-  border-width: 0.5vw;
+  background-clip: text; /* 只顯示在文字內部的背景 */
+  -webkit-background-clip: text; /* WebKit瀏覽器的背景裁剪 */
+  color: transparent; /* 將文字設置為透明，讓背景可見 */
+  padding: 0; /* 無內邊距 */
+  margin: 0; /* 無外邊距 */
+  text-shadow: -15px 5px #c7c7c7, 15px -5px #5e5e5e; /* 設置文字陰影效果 */
+  -webkit-text-stroke: 5px #000000; /* 設置黑色的外描邊 */
 }
 .button {
-  position: relative;
-  top: 35%;
-  border-radius: 50px;
-  background: rgb(255, 255, 255);
+  position: relative; /* 相對定位 */
+  top: 35%; /* 距離上方35% */
+  border-radius: 50px; /* 圓角邊框 */
+  background: rgb(255, 255, 255); /* 白色背景 */
+  font-size: 1vw;
 }
-#sun {
-  left: -30vw;
+#titleBOX {
+  display: flex; /* 使用 Flexbox 進行佈局 */
+  background-color: hsl(0, 0%, 100%); /* 設置背景顏色為白色 */
+  width: 100%; /* 寬度為100% */
+  right: 0%; /* 右邊距為0% */
+  left: 0%; /* 左邊距為0% */
+  overflow: hidden; /* 隱藏超出區域的內容 */
 }
-#moon {
-  left: -5vw;
-}
-/* 以 下 為了展開動畫 */
-details {
-  overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
-}
+@media (min-width: 1024px) {
+  #TitleText {
+    font-size: 10vh;
+  }
+  #titleBOX {
+    height: 28vh; /* 高度為視窗高度的28% */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+  }
+  #slider {
+    position: absolute;
 
-summary {
+    top: -30vh; /* 距離頂部的負位置，向上偏移 */
+    transform: rotate(90deg) translate(-50%, -80%); /* 旋轉和位移轉換 */
+    width: 50vw;
+    height: 50vw;
+    max-width: 700px; /* 最大寬度為700px */
+    max-height: 700px; /* 最大高度為700px */
+    border: 5px hsl(0, 0%, 50%) solid; /* 灰色的實線邊框 */
+    border-radius: 50% 50% 50% 50%; /* 設置為圓形 */
+    cursor: grab; /* 設置游標為抓手 */
+  }
+  #slider::after,
+  #slider::before {
+    content: ""; /* 在滑塊上方創建一個虛擬元素 */
+    position: absolute; /* 絕對定位 */
+    left: 50%; /* 水平置中 */
+    transform: translateX(-50%); /* 水平居中 */
+    width: 2em; /* 寬度為1em */
+    height: 2em; /* 高度為1em */
+    border-radius: 50%; /* 設置為圓形 */
+  }
+
+  #slider::after {
+    top: 98.5%;
+    background-color: #ffb700; /* 黃色背景 */
+  }
+  #slider::before {
+    top: -2.5%;
+    background-color: #6c6c6c; /* 灰色背景 */
+  }
+  #sun {
+    left: 10%; /* 水平位置為負的30%寬度 */
+  }
+
+  #moon {
+    left: -10%; /* 水平位置為負的5%寬度 */
+  }
+  .cantSelect {
+    user-select: none; /* 禁止使用者選取文字 */
+    -webkit-user-select: none; /* WebKit瀏覽器的文字選取禁用 */
+    -moz-user-select: none; /* Firefox瀏覽器的文字選取禁用 */
+  }
+  .content {
+    font-size: 2vw;
+  }
+}
+@media (max-width: 768px) {
+  #slider {
+    display: none;
+  }
+  #TitleText {
+    font-size: 10vw;
+  }
+  #titleBOX {
+    height: 20vw; /* 高度為視窗高度的28% */
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    position: absolute; /* 相對定位 */
+    font-size: 5vw;
+  }
+  #sun {
+    top: 1%;
+    left: 90%; /* 水平位置為負的30%寬度 */
+  }
+
+  #moon {
+    top: 5%;
+    left: 90%; /* 水平位置為負的5%寬度 */
+  }
+  .content {
+    font-size: 3vh;
+  }
+}
+.content {
+  position: relative;
+  overflow: hidden;
+}
+/* 箭頭符號*/
+/* 隱藏初始 */
+.content details summary {
   display: block;
 }
 
-summary::-webkit-details-marker {
-  display: none;
+/* 轉向 */
+.content details summary span::before {
+  content: ">";
+  display: inline-block;
+  transition: transform 200ms ease-out; /* 針對 transform 設置過渡效果 */
 }
 
-span {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  background: #444;
-  color: #fff;
-  height: 4rem;
+/* 當 details 展開時，箭頭旋轉 90 度 */
+.content details[open] summary span::before {
+  transform: rotate(90deg);
 }
 
-span:hover {
-  cursor: pointer;
-}
-
-span::before {
-  content: "►";
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  transition: rotate 200ms 400ms ease-out;
-}
-
-div.content {
-  box-sizing: border-box;
+/* 展開動畫 */
+.content > div {
   max-height: 0;
-  overflow: hidden;
-  padding: 0 10px;
-  border: 2px solid transparent;
+  transition: max-height 400ms ease-out;
+}
+.content details[open] + div {
+  max-height: 800px;
   transition: max-height 400ms ease-out, border 0ms 400ms linear;
 }
-
-details[open] + div.content {
-  max-height: 800px; /* Set a max-height value enough to show all the content */
-  border-color: #888;
-  transition: max-height 400ms ease-out, border 0ms linear;
-}
-
-details[open] span::before {
-  rotate: 90deg;
-  transition: rotate 200ms ease-out;
-}
-
-.pic {
-  position: relative;
-  aspect-ratio: 2 / 1;
-  width: 300px;
-  left: 25%;
-  vertical-align: top;
+#cntBOX {
+  top: 20vw; /* 距離頂部20%寬度 */
+  left: 10%; /* 左邊距10% */
+  right: 10%; /* 右邊距10% */
+  background-color: hsl(0, 0%, 100%); /* 白色背景 */
+  color: #000000; /* 黑色文字 */
+  border-style: solid double; /* 雙線實線邊框 */
+  border-width: 0.5vw; /* 邊框寬度為視窗寬度的0.5% */
 }

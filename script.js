@@ -19,7 +19,7 @@ function UpdateColor() {
   TitleText.style.textShadow = `-15px 5px hsl(0, 0%, ${
     50 + light / 2
   }%), 15px -5px hsl(0, 0%, ${50 - light / 2}%);`;
-  TitleText.style.webkitTextStroke = `2px hsl(0, 0%, ${100 - light}%)`;
+  TitleText.style.webkitTextStroke = `5px hsl(0, 0%, ${100 - light}%)`;
 }
 
 slider.style.transform = `rotate(${currentRotation}deg)`;
@@ -60,10 +60,11 @@ for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", (e) => {
     if (e.target.id === "sun") {
       target = 0;
+      rotateSlider();
     } else if (e.target.id === "moon") {
       target = 180;
+      rotateSlider();
     }
-    rotateSlider();
   });
 }
 function rotateSlider() {
