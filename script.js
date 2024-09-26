@@ -4,7 +4,7 @@ var startX; // 定義開始拖動時的 X 座標
 var stopX;
 var box = document.getElementById("titleBOX");
 var slider = document.getElementById("slider");
-var content = document.getElementById("content");
+var content = document.getElementById("cntBOX");
 var TitleText = document.getElementById("TitleText");
 var buttons = document.getElementsByClassName("button");
 var light = 100;
