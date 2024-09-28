@@ -15,11 +15,9 @@
   -webkit-text-stroke: 5px #000000; /* 設置黑色的外描邊 */
 }
 .button {
-  position: relative; /* 相對定位 */
-  top: 35%; /* 距離上方35% */
   border-radius: 50px; /* 圓角邊框 */
   background: rgb(255, 255, 255); /* 白色背景 */
-  font-size: 1vw;
+  font-size: 2vh;
 }
 #titleBOX {
   display: flex; /* 使用 Flexbox 進行佈局 */
@@ -29,7 +27,7 @@
   left: 0%; /* 左邊距為0% */
   overflow: hidden; /* 隱藏超出區域的內容 */
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   #TitleText {
     font-size: 10vh;
   }
@@ -39,12 +37,12 @@
     align-items: center; /* 垂直居中 */
   }
   #slider {
-    position: absolute;
+    position: relative;
 
-    top: -30vh; /* 距離頂部的負位置，向上偏移 */
+    top: -50%; /* 距離頂部的負位置，向上偏移 */
     transform: rotate(90deg) translate(-50%, -80%); /* 旋轉和位移轉換 */
-    width: 50vw;
-    height: 50vw;
+    width: 50vh;
+    height: 50vh;
     max-width: 700px; /* 最大寬度為700px */
     max-height: 700px; /* 最大高度為700px */
     border: 5px hsl(0, 0%, 50%) solid; /* 灰色的實線邊框 */
@@ -70,12 +68,17 @@
     top: -2.5%;
     background-color: #6c6c6c; /* 灰色背景 */
   }
+  #sun,
+  #moon {
+    position: absolute;
+    top: 25%; /* 距離上方35% */
+  }
   #sun {
-    left: 10%; /* 水平位置為負的30%寬度 */
+    left: 40%; /* 水平位置為負的30%寬度 */
   }
 
   #moon {
-    left: -10%; /* 水平位置為負的5%寬度 */
+    left: 60%; /* 水平位置為負的5%寬度 */
   }
   .cantSelect {
     user-select: none; /* 禁止使用者選取文字 */
@@ -86,7 +89,7 @@
     font-size: 2vw;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #slider {
     display: none;
   }
