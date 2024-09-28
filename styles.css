@@ -36,7 +36,6 @@
   overflow: hidden; /* 隱藏超出區域的內容 */
 }
 @media screen and (min-width: 768px) {
-@media screen and (min-width: 768px) {
   #TitleText {
     font-size: 10vh;
   }
@@ -99,7 +98,6 @@
     font-size: 2vw;
   }
 }
-@media screen and (max-width: 768px) {
 @media screen and (max-width: 768px) {
   #slider {
     display: none;
