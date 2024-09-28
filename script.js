@@ -2,24 +2,29 @@ var currentRotation = 0;
 var isDragging = false; // 定義拖動狀態為假
 var startX; // 定義開始拖動時的 X 座標
 var stopX;
-var box = document.getElementById("titleBOX");
 var slider = document.getElementById("slider");
-var content = document.getElementById("cntBOX");
-var TitleText = document.getElementById("TitleText");
 var buttons = document.getElementsByClassName("button");
 var light = 100;
 
 function UpdateColor() {
   light = Math.abs(((100 + currentRotation / 3.6) % 100) * 2 - 100);
-  box.style.backgroundColor = `hsl(0, 0%, ${light}%)`;
-  content.style.backgroundColor = `hsl(0, 0%, ${light}%)`;
-  content.style.color = `hsl(104, 50%, ${100 - light}%)`;
-  // text-shadow: -15px 5px #c7c7c7, 15px -5px #5e5e5e;
-  // -webkit-text-stroke: 2px#000000;
-  TitleText.style.textShadow = `-15px 5px hsl(0, 0%, ${
-    50 + light / 2
-  }%), 15px -5px hsl(0, 0%, ${50 - light / 2}%);`;
-  TitleText.style.webkitTextStroke = `5px hsl(0, 0%, ${100 - light}%)`;
+  // 修改 --Acolor 變數的值
+  document.documentElement.style.setProperty(
+    "--Acolor",
+    `hsl(0, 0%, ${light}%)`
+  );
+  document.documentElement.style.setProperty(
+    "--Bcolor",
+    `hsl(104, 50%, ${100 - light}%)`
+  );
+  document.documentElement.style.setProperty(
+    "--midColor",
+    `hsl(0, 0%, ${25 + light / 2}%)`
+  );
+  document.documentElement.style.setProperty(
+    "--TmidColor",
+    `hsl(0, 0%, ${75 - light / 2}%)`
+  );
 }
 
 slider.style.transform = `rotate(${currentRotation}deg)`;
