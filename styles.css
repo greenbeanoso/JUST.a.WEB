@@ -12,13 +12,13 @@
     hsl(0, 0%, 100%),
     hsl(0, 0%, 0%)
   ); /* 設置45度的線性漸變背景 */
-  background-clip: text; /* 只顯示在文字內部的背景 */
-  -webkit-background-clip: text; /* WebKit瀏覽器的背景裁剪 */
   color: transparent; /* 將文字設置為透明，讓背景可見 */
   padding: 0; /* 無內邊距 */
   margin: 0; /* 無外邊距 */
-  text-shadow: -15px 5px var(--midColor), 15px -5px var(--TmidColor); /* 設置文字陰影效果 */
-  -webkit-text-stroke: 5px var(--Bcolor); /* 設置黑色的外描邊 */
+  text-shadow: -15px 5px var(--midColor), 15px -5px var(--TmidColor);
+  -webkit-text-stroke: 0.2vh var(--Bcolor);
+  background-clip: text; /* 只顯示在文字內部的背景 */
+  -webkit-background-clip: text; /* WebKit瀏覽器的背景裁剪 */
 }
 .button {
   border-radius: 50px; /* 圓角邊框 */

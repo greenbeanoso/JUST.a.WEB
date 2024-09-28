@@ -15,7 +15,7 @@ function UpdateColor() {
   );
   document.documentElement.style.setProperty(
     "--Bcolor",
-    `hsl(104, 50%, ${100 - light}%)`
+    `hsl(104, 100%, ${100 - light}%)`
   );
   document.documentElement.style.setProperty(
     "--midColor",
