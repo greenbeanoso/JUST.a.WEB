@@ -36,6 +36,7 @@
   overflow: hidden; /* 隱藏超出區域的內容 */
 }
 @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   #TitleText {
     font-size: 10vh;
   }
@@ -48,6 +49,8 @@
     position: relative;
     top: -50%; /* 距離頂部的負位置，向上偏移 */
     transform: rotate(90deg) translate(-50%, -80%); /* 旋轉和位移轉換 */
+    width: 50vh;
+    height: 50vh;
     width: 50vh;
     height: 50vh;
     max-width: 700px; /* 最大寬度為700px */
@@ -96,6 +99,7 @@
     font-size: 2vw;
   }
 }
+@media screen and (max-width: 768px) {
 @media screen and (max-width: 768px) {
   #slider {
     display: none;
